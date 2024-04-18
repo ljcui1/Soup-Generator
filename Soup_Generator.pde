@@ -201,6 +201,9 @@ class Soup {
       blue = random(0, 100);
       fill(red, green, blue);
     }else{
+      red = random(red - 25, red + 25);
+      green = random(green - 25, green + 25);
+      blue = random(blue - 25, blue + 25);
       fill(red, green, blue);
     }
     
@@ -315,6 +318,18 @@ class CheckBox{
   void clicked(){
     if(mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h){
       checked = !checked;
+      if(label == "Random Soup: "){
+        rand = checked;
+        color_rand = checked;
+        amt_rand = checked;
+        shape_rand = checked;
+      }else if(label == "Rectangular Ingredient: "){
+        rect_sel = checked;
+      }else if(label == "Circular Ingredient: "){
+        oval_sel = checked;
+      }else if(label == "Triangular Ingredient: "){
+        tri_sel = checked;
+      }
       println(checked);
     }
   }
