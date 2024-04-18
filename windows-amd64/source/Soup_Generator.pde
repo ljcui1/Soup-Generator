@@ -90,7 +90,7 @@ void draw(){
     bowl.display();
     soup.broth();
     //soup.ingredients(amt_rand, amt);
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < int(random(5, 12)); i++){
       soup.ing_gen(shape_rand, rect_sel, oval_sel, tri_sel, color_rand, red, green, blue);
     }
     strokeWeight(10);
@@ -230,14 +230,23 @@ class Soup {
       shapes.add("oval");
       shapes.add("tri");
     }else{
-      println("rect " + rect_sel);
       if(rect_sel == true){
         shapes.add("rect");
-      }else if(oval_sel == true){
+      }
+      if(oval_sel == true){
         shapes.add("oval");
-      }else if(tri_sel == true){
+      }
+      if(tri_sel == true){
         shapes.add("tri");
       }
+      println("rect " + rect_sel);
+      println("circ " + oval_sel);
+      println("tri " + tri_sel);
+      
+      for(int i = 0; i < shapes.size(); i++){
+        println(shapes.get(i));
+      }
+      
     }
     //println("rect " + rect_sel);
     
